@@ -1,0 +1,19 @@
+<div *ngIf="equipo">
+  <div class="card" style="width: 18rem;">
+    <img [src]="equipo?.escudo" [alt]="equipo?.nombre" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{ equipo?.nombre }}</h5>
+      <p class="card-text">Estadio: <strong> {{ equipo?.estadio }} </strong> </p>
+      <p class="card-text">Apodo: <strong> {{ equipo?.apodo }} </strong> </p>
+      <p class="card-text">fundacion: <strong> {{ equipo?.fundacion }} </strong> </p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!equipo">
+  <div class="card" style="width: 18rem;">
+    <img src="../../assets/nodata.jpg" alt="No se encontro informacion" class="card-img-top">
+    <div class="card-body">
+    </div>
+  </div>
+</div>

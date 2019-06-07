@@ -1,0 +1,22 @@
+[
+  { "nombre": "Palmeiras", "pj": "38", "pg": "23", "pe": "11", "pp": "4", "dg": "38", "pts": "80", "cod": "pal" },
+  { "nombre": "Flamengo", "pj": "38", "pg": "21", "pe": "9", "pp": "8", "dg": "30", "pts": "72", "cod": "fla"  },
+  { "nombre": "Internacional", "pj": "38", "pg": "19", "pe": "12", "pp": "7", "dg": "22", "pts": "69", "cod": "int"  },
+  { "nombre": "Gremio", "pj": "38", "pg": "18", "pe": "12", "pp": "8", "dg": "21", "pts": "66", "cod": "gre"  },
+  { "nombre": "Sao Paulo", "pj": "38", "pg": "16", "pe": "15", "pp": "7", "dg": "12", "pts": "63", "cod": "sao"  },
+  { "nombre": "Atletico Mineiro", "pj": "38", "pg": "17", "pe": "8", "pp": "13", "dg": "13", "pts": "59", "cod": "atm"  },
+  { "nombre": "Athletico Paranaense", "pj": "38", "pg": "16", "pe": "9", "pp": "13", "dg": "17", "pts": "57", "cod": "atp"  },
+  { "nombre": "Cruzeiro", "pj": "38", "pg": "14", "pe": "11", "pp": "13", "dg": "0", "pts": "53", "cod": "cru"  },
+  { "nombre": "Botafogo", "pj": "38", "pg": "13", "pe": "12", "pp": "13", "dg": "-8", "pts": "51", "cod": "bot"  },
+  { "nombre": "Santos", "pj": "38", "pg": "13", "pe": "11", "pp": "14", "dg": "6", "pts": "50", "cod": "san"  },
+  { "nombre": "Bahia", "pj": "38", "pg": "12", "pe": "12", "pp": "14", "dg": "-2", "pts": "48", "cod": "bah"  },
+  { "nombre": "Fluminense", "pj": "38", "pg": "12", "pe": "9", "pp": "17", "dg": "-14", "pts": "45", "cod": "flu"  },
+  { "nombre": "Corinthians", "pj": "38", "pg": "11", "pe": "11", "pp": "16", "dg": "-1", "pts": "44", "cod": "cor"  },
+  { "nombre": "Chapecoense", "pj": "38", "pg": "11", "pe": "11", "pp": "16", "dg": "-16", "pts": "44", "cod": "cha"  },
+  { "nombre": "Ceara", "pj": "38", "pg": "10", "pe": "14", "pp": "14", "dg": "-6", "pts": "44", "cod": "cea"  },
+  { "nombre": "Vasco da Gama", "pj": "38", "pg": "10", "pe": "13", "pp": "15", "dg": "-7", "pts": "43", "cod": "vga"  },
+  { "nombre": "Sport Recife", "pj": "38", "pg": "11", "pe": "9", "pp": "18", "dg": "-22", "pts": "42", "cod": "sre"  },
+  { "nombre": "America-MG", "pj": "38", "pg": "10", "pe": "10", "pp": "18", "dg": "-17", "pts": "40", "cod": "ame"  },
+  { "nombre": "Vitoria", "pj": "38", "pg": "9", "pe": "10", "pp": "19", "dg": "-27", "pts": "37", "cod": "vit"  },
+  { "nombre": "Parana", "pj": "38", "pg": "4", "pe": "11", "pp": "23", "dg": "-39", "pts": "23", "cod": "par"  }
+]
