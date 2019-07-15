@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Equipo } from '../models/equipo';
-import { DetalleEquipoService } from 'src/app/services/detalle-equipo.service';
+import { EquipoService } from 'src/app/services/equipo.service';
 
 @Component({
   selector: 'app-detalles',
@@ -11,11 +11,11 @@ export class DetallesComponent implements OnInit {
 
   equipo:Equipo
   constructor(
-    private detalleEquipo:DetalleEquipoService 
+    private equipoService:EquipoService 
   ) { }
 
   ngOnInit() {
-    this.detalleEquipo.equipoActual
+    this.equipoService.equipoActual
       .subscribe(equipo => { 
         this.equipo = equipo; 
         console.log('app-detalles: ', this.equipo);
