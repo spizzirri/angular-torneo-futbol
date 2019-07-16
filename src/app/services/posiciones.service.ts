@@ -14,7 +14,7 @@ export class PosicionesService {
   getPosiciones(pais: string) {
     let subscribe$: Observable<any>
     if (environment.mocks) {
-      return of(TABLAS[pais]);
+      subscribe$ = of(TABLAS[pais]);
     } else {
       subscribe$ = this.apiService.get(``);
     }

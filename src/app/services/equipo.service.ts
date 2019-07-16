@@ -13,7 +13,7 @@ export class EquipoService {
 
   private equipo = new BehaviorSubject<Equipo>(null);
 
-  equipoActual = this.equipo.asObservable();
+  equipoActual:Observable<any> = this.equipo.asObservable();
 
   constructor(
     private apiService: ApiService
