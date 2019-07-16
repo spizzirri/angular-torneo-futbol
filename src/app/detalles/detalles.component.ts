@@ -9,16 +9,25 @@ import { EquipoService } from 'src/app/services/equipo.service';
 })
 export class DetallesComponent implements OnInit {
 
-  equipo:Equipo
+  equipo: Equipo
   constructor(
-    private equipoService:EquipoService 
+    private equipoService: EquipoService
   ) { }
 
   ngOnInit() {
     this.equipoService.equipoActual
-      .subscribe(equipo => { 
-        this.equipo = equipo; 
-        console.log('app-detalles: ', this.equipo);
-      });
+      .subscribe(equipo => this.equipo = this.verificarDatos(equipo));
   }
+
+  verificarDatos(equipo: Equipo): Equipo {
+    if (!equipo) {
+      equipo = { nombre: "?", apodo: "?", escudo: "../../assets/nodata.jpg", estadio: "?", fundacion: "?" }
+    } else {
+      if (!equipo.escudo) {
+        equipo.escudo = "../../assets/nodata.jpg";
+      }
+    }
+    return equipo;
+  }
+
 }
