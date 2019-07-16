@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Posicion } from '../models/posicion';
 import { Equipo } from '../models/equipo';
-import { BehaviorSubject, Observable, of, EMPTY } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { ApiService } from './api.service';
 import { environment } from '../../environments/environment';
 import { EQUIPOS } from './mocks/equipos/equipos';
@@ -16,7 +16,7 @@ export class EquipoService {
   equipoActual = this.equipo.asObservable();
 
   constructor(
-    private api: ApiService
+    private apiService: ApiService
   ) { }
 
   getDetalle(posicion: Posicion, pais: string) {
@@ -27,7 +27,7 @@ export class EquipoService {
       else
         subscribe$ = of(null)
     } else {
-      subscribe$ = this.api.get(``);
+      subscribe$ = this.apiService.get(``);
     }
 
     subscribe$

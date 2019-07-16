@@ -9,14 +9,14 @@ import { TABLAS } from './mocks/tablas/tablas';
 })
 export class PosicionesService {
 
-  constructor( private api:ApiService ) { }
+  constructor(private apiService: ApiService) { }
 
-  getPosiciones(pais:string){
+  getPosiciones(pais: string) {
     let subscribe$: Observable<any>
-    if(environment.mocks){
-      return of(TABLAS[pais]);     
-    }else{
-      subscribe$ = this.api.get(``); 
+    if (environment.mocks) {
+      return of(TABLAS[pais]);
+    } else {
+      subscribe$ = this.apiService.get(``);
     }
 
     return subscribe$;

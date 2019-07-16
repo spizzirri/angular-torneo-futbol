@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Posicion } from '../../models/posicion'
 import { EquipoService } from 'src/app/services/equipo.service';
 import { PosicionesService } from 'src/app/services/posiciones.service';
-import { Observable, range } from 'rxjs';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-posiciones',
@@ -18,14 +16,14 @@ export class PosicionesComponent implements OnInit {
   pais: string;
 
   constructor(
-    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private equipoService: EquipoService,
     private posicionesService: PosicionesService
   ) { }
 
   ngOnInit() {
 
-    const params$ = this.route.paramMap;
+    const params$ = this.activatedRoute.paramMap;
 
     params$
       .subscribe(params => {

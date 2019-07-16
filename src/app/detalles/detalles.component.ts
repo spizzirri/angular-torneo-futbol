@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Equipo } from '../models/equipo';
 import { EquipoService } from 'src/app/services/equipo.service';
 
