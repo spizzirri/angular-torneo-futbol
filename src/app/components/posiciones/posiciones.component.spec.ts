@@ -1,8 +1,40 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { PosicionesComponent } from './posiciones.component';
-import { Posicion } from 'src/app/models/posicion';
-import { HttpClientModule } from '@angular/common/http';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { EquipoService } from 'src/app/services/equipo.service';
+import { PosicionesService } from 'src/app/services/posiciones.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Equipo } from 'src/app/models/equipo';
+import { of, Observable } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
+
+class EquipoServiceStub {
+  getDetalle(equipo: Equipo, pais: string): void { };
+}
+
+class PosicionesServiceStub {
+  getPosiciones(pais: string): Observable<any> {
+    return of([]);
+  }
+}
+
+class mParamMap implements ParamMap {
+  get(name: string): string {
+    return "ARG";
+  }
+  has(name: string): boolean {
+    return true;
+  }
+  getAll(name: string): string[] {
+    return [""]
+  }
+  readonly keys: string[];
+}
+
+class ActivatedRouteStub {
+  paramMap: Observable<ParamMap> = of(new mParamMap());
+}
 
 describe('PosicionesComponent', () => {
   let component: PosicionesComponent;
@@ -10,12 +42,21 @@ describe('PosicionesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PosicionesComponent ]
+      declarations: [PosicionesComponent],
+      imports: [
+        RouterTestingModule
+      ],
+      providers: [
+        { provide: EquipoService, useClass: EquipoServiceStub },
+        { provide: PosicionesService, useClass: PosicionesServiceStub },
+        { provide: ActivatedRoute, useClass: ActivatedRouteStub }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
+    fixture = TestBed.createComponent(PosicionesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -24,12 +65,8 @@ describe('PosicionesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have a Posiciones as title', ()=>{
-    expect(component.title).toEqual("Posiciones")
-  })
-
-  it('should have title in h3', ()=>{
-    let h3Tag:HTMLElement = fixture.nativeElement.querySelector("h1");
-    expect(h3Tag.textContent).toEqual(" Posiciones ")
-  })
+  it('should have title in h3', () => {
+    let h1: DebugElement = fixture.debugElement.query(By.css("h1"));
+    expect(h1.nativeElement.innerText).toContain("Posiciones")
+  });
 });
