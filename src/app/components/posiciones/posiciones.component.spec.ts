@@ -3,7 +3,6 @@ import { PosicionesComponent } from './posiciones.component';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { EquipoService } from 'src/app/services/equipo.service';
-import { PosicionesService } from 'src/app/services/posiciones.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Equipo } from 'src/app/models/equipo';
 import { of, Observable } from 'rxjs';
@@ -48,7 +47,6 @@ describe('PosicionesComponent', () => {
       ],
       providers: [
         { provide: EquipoService, useClass: EquipoServiceStub },
-        { provide: PosicionesService, useClass: PosicionesServiceStub },
         { provide: ActivatedRoute, useClass: ActivatedRouteStub }
       ]
     })

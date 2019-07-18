@@ -21,13 +21,8 @@ export class DetallesComponent implements OnInit {
 
   verificarDatos(equipo: Equipo): Equipo {
     if (!equipo) {
-      equipo = { nombre: "?", apodo: "?", escudo: "../../assets/nodata.jpg", estadio: "?", fundacion: "?" }
-    } else {
-      if (!equipo.escudo) {
-        equipo.escudo = "../../assets/nodata.jpg";
-      }
+    
     }
     return equipo;
   }
-
 }

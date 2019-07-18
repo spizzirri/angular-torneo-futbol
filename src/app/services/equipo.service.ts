@@ -23,7 +23,7 @@ export class EquipoService {
     let subscribe$: Observable<any>
     if (environment.mocks) {
       if (EQUIPOS[pais])
-        subscribe$ = of(EQUIPOS[pais][posicion.cod]);
+        subscribe$ = of(null);
       else
         subscribe$ = of(null)
     } else {

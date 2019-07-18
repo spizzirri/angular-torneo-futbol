@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CabeceraComponent } from './components/cabecera/cabecera.component';
 import { DetallesComponent } from './detalles/detalles.component'
 import { EquipoService } from './services/equipo.service';
-import { PosicionesService } from './services/posiciones.service';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { PosicionesService } from './services/posiciones.service';
     HttpClientModule
   ],
   providers: [
-    EquipoService,
-    PosicionesService
+    EquipoService
   ],
   bootstrap: [AppComponent]
 })
