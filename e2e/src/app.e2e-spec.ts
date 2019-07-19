@@ -7,8 +7,16 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display Posiciones message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to angular-torneo-futbol!');
+    expect(page.getTitleText()).toEqual('Posiciones');
   });
-});
+
+  it("debe navegar a la tabla de posiciones de Brasil", () => {
+    page.navigateTo();
+    const element = page.getElementById("linkBrasil")
+
+    element.click()
+      .then(() => expect(page.getCurrentUrl()).toContain("BRA"))
+  });
+})
